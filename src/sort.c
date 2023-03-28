@@ -6,7 +6,7 @@
 /*   By: shsawaki <shsawaki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 23:55:51 by shsawaki          #+#    #+#             */
-/*   Updated: 2023/03/14 22:20:49 by shsawaki         ###   ########.fr       */
+/*   Updated: 2023/03/28 22:47:48 by shsawaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,12 @@ void	sort5(t_stack **stack_a, t_stack **stack_b, size_t lstsize)
 			rra(stack_a);
 	}
 	sort3(stack_a);
-	if (is_sorted(*stack_b) && ft_lstsize(*stack_b) == 2)
+	if (!is_sorted(*stack_b) && len == 5)
 		sb(stack_b);
-	while (ft_lstsize(*stack_b) > 0)
+	while (len - 3)
 	{
 		pa(stack_a, stack_b);
+		len--;
 	}
 	return ;
 }

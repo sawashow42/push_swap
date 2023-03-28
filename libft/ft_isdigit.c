@@ -6,9 +6,11 @@
 /*   By: shsawaki <shsawaki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 02:53:08 by shsawaki          #+#    #+#             */
-/*   Updated: 2022/07/08 03:40:28 by shsawaki         ###   ########.fr       */
+/*   Updated: 2023/03/28 22:28:04 by shsawaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 int	ft_isdigit(int c)
 {

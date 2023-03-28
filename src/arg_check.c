@@ -6,7 +6,7 @@
 /*   By: shsawaki <shsawaki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 02:28:35 by shsawaki          #+#    #+#             */
-/*   Updated: 2023/03/14 22:28:05 by shsawaki         ###   ########.fr       */
+/*   Updated: 2023/03/28 22:43:37 by shsawaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,13 @@ static int	check_num(char *argv)
 	while (argv[j] != '\0')
 	{
 		if (!ft_isdigit(argv[j]))
+		{
+			write(2, "Error\n", 6);
 			exit (1);
-		if (check_over_long(num, sign, argv[j]) && sign == 1)
-			exit (1);
-		if (check_over_long(num, sign, argv[j]) && sign == -1)
-			exit (1);
-		num = num * 10 + argv[j] - '0';
+		}
 		j++;
 	}
-	return (num * sign);
+	return (ft_atoi(argv));
 }
 
 int	arg_check(int argc, char **argv)
@@ -47,9 +45,10 @@ int	arg_check(int argc, char **argv)
 	int	i;
 	int	l;
 	int	num;
+	int	is_num;
 
 	if (argc < 2)
-		exit(1);
+		return (1);
 	i = 1;
 	while (i < argc)
 	{
@@ -60,7 +59,7 @@ int	arg_check(int argc, char **argv)
 		while (l < argc)
 		{
 			if (ft_atoi(argv[i]) == ft_atoi(argv[l]))
-				exit (1);
+				return (1);
 			l++;
 		}
 		i++;
