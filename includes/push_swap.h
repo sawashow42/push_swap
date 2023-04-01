@@ -42,7 +42,7 @@ t_stack				*ft_lstmap(t_stack *lst, int (*f)(int), void (*del)(int));
 int					arg_check(int argc, char **argv);
 
 //stack
-void				init_stack(t_stack **stack, int argc, char **argv);
+void				init_stack(t_stack **stack, char **argv);
 void				coordinate_comp(t_stack *stack);
 int					is_sorted(t_stack *stack);
 

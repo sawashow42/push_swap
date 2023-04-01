@@ -26,9 +26,9 @@ void	sort3(t_stack **stack_a)
 
 void	sort5(t_stack **stack_a, t_stack **stack_b, size_t lstsize)
 {
-	size_t	len;
+	int	len;
 
-	len = lstsize;
+	len = (int)lstsize;
 	while (ft_lstsize(*stack_a) > 3)
 	{
 		if ((*stack_a)->index < len - 3)
@@ -53,7 +53,6 @@ void	sort5(t_stack **stack_a, t_stack **stack_b, size_t lstsize)
 void	sort(t_stack **stack_a, t_stack **stack_b)
 {
 	size_t	lstsize;
-	size_t	lstsize_b;
 
 	lstsize = ft_lstsize(*stack_a);
 	if (lstsize == 2)

@@ -13,7 +13,7 @@
 NAME = push_swap
 
 CC = cc
-# CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 SRCS = $(shell find . type f -name \*.c)
@@ -23,7 +23,7 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME):	$(OBJS)
-	$(CC) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 $(OBJS):	$(HDRS)
 
@@ -36,5 +36,3 @@ fclean : clean
 re: fclean all
 
 .PHONY : all clean fclean re
-
-

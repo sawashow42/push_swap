@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 		exit(1);
 	}
 	stack_a = NULL;
-	init_stack(&stack_a, argc, argv);
+	init_stack(&stack_a, argv);
 	stack_b = NULL;
 	coordinate_comp(stack_a);
 	if (is_sorted(stack_a))

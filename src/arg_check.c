@@ -16,24 +16,16 @@
 static int	check_num(char *argv)
 {
 	int	j;
-	int	num;
-	int	sign;
 
 	j = 0;
-	num = 0;
-	sign = 1;
-	if (argv[j] != '\0' && (argv[j] == '-' || argv[j] == '+'))
-	{
-		if (argv[j] == '-')
-			sign *= -1;
+	if (argv[j] == '-' || argv[j] == '+')
 		j++;
-	}
-	while (argv[j] != '\0')
+	while (argv[j])
 	{
 		if (!ft_isdigit(argv[j]))
 		{
 			write(2, "Error\n", 6);
-			exit (1);
+			exit(1);
 		}
 		j++;
 	}
@@ -45,7 +37,6 @@ int	arg_check(int argc, char **argv)
 	int	i;
 	int	l;
 	int	num;
-	int	is_num;
 
 	if (argc < 2)
 		return (1);

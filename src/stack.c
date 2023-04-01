@@ -13,7 +13,7 @@
 #include "../includes/push_swap.h"
 #include <stdio.h>
 
-void	init_stack(t_stack **stack, int argc, char **argv)
+void	init_stack(t_stack **stack, char **argv)
 {
 	int		i;
 	t_stack	*new;
